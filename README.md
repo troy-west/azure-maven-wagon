@@ -11,7 +11,7 @@ Configuration
 			<extension>
 				<groupId>com.microsoft.windowsazure</groupId>
 				<artifactId>maven-wagon-azure-blob</artifactId>
-				<version>1.0.0</version>
+				<version>1.0.2-SNAPSHOT</version>
 			</extension>
 		</extensions>
 	</build>
@@ -53,3 +53,20 @@ After 'azureblob://' a valid Windows Azure Storage connection string gets specif
 	</servers>
 
 The 'privateKey' tag contains the Windows Azure Storage account key
+
+Leiningen
+----
+
+To use from Leiningen add the following to your ~/.lein/profile.clj
+
+``` clojure
+:your-profile {:deploy-repositories {"snapshots" {:url "azureblob://<<YourAzureStorageAccountConnectionString>>" :no-auth true}
+                                     "releases" {:url "azureblob://<<YourAzureStorageAccountConnectionString>>" :no-auth true}}
+               :plugins [[com.microsoft.windowsazure/maven-wagon-azure-blob "1.0.2-SNAPSHOT"]]}
+```
+
+Then you can deploy with:
+
+``` shell
+lein with-profile your-profile deploy
+```
