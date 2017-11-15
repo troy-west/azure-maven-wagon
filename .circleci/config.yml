@@ -38,6 +38,10 @@ jobs:
           command: mvn compile
           working_directory: maven-wagon-azure-blob
 
+      - run:
+          command: mvn install -DskipTests
+          working_directory: maven-wagon-azure-blob
+
       - store_artifacts:
           path: maven-wagon-azure-blob/target/maven-wagon-azure-blob-1.0.2-SNAPSHOT.jar
 
