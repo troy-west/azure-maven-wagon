@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.microsoft.windowsazure</groupId>
+	<groupId>com.troy-west</groupId>
 	<artifactId>maven-wagon-azure-blob</artifactId>
 	<version>1.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -19,30 +19,7 @@
 			<comments>A business-friendly OSS license</comments>
 		</license>
 	</licenses>
-	
-	<scm>
-		<connection>scm:git:git@github.com:JMayrbaeurl/azure-maven-wagon.git</connection>
-		<url>scm:git:git@github.com:JMayrbaeurl/azure-maven-wagon.git</url>
-		<developerConnection>scm:git:git@github.com:JMayrbaeurl/azure-maven-wagon.git</developerConnection>
-	</scm>
-	<issueManagement>
-		<system>GitHub</system>
-		<url>https://github.com/JMayrbaeurl/azure-maven-wagon/issues</url>
-	</issueManagement>	
-	
-	<developers>
-		<developer>
-			<id>jurgenma</id>
-			<name>Jürgen Mayrbäurl</name>
-			<email>jurgenma@microsoft.com</email>
-			<organization>Microsoft</organization>
-			<organizationUrl>www.microsoft.com</organizationUrl>
-			<roles>
-				<role>Principal Technical Evangelist</role>
-			</roles>
-		</developer>
-	</developers>
-		
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<junit.version>4.11</junit.version>
@@ -76,8 +53,8 @@
           			<artifactId>mail</artifactId>
         		</exclusion>
 	  		</exclusions>
-	  	</dependency>	
-	  	
+	  	</dependency>
+
 	  	<!-- Testing -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -92,7 +69,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -145,7 +122,7 @@
 				</executions>
 			</plugin>
 		</plugins>
-		
+
 		<pluginManagement>
 			<plugins>
 				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
@@ -174,8 +151,8 @@
 					</configuration>
 				</plugin>
 			</plugins>
-		</pluginManagement>		
-		
+		</pluginManagement>
+
 		<extensions>
 			<!-- Eat your own dogfood. Use Azure for distribution -->
 			<extension>
@@ -184,8 +161,8 @@
 				<version>1.0.0</version>
 			</extension>
 		</extensions>
-	</build>	
-	
+	</build>
+
 	<reporting>
 		<plugins>
 			<plugin>
@@ -195,30 +172,4 @@
       		</plugin>
 		</plugins>
 	</reporting>
-
-	<pluginRepositories>
-		<pluginRepository>
-			<id>ExtensionsRepo</id>
-			<url>http://jmamavenrepos.blob.core.windows.net/releases</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
-	
-	<distributionManagement>
-		<repository>
-			<id>AzureMavenRepos</id>
-			<name>AzureMavenRepos</name>
-			<url>azureblob://DefaultEndpointsProtocol=https;AccountName=jmamavenrepos/releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>AzureMavenRepos</id>
-			<name>AzureMavenRepos</name>
-			<url>azureblob://DefaultEndpointsProtocol=https;AccountName=jmamavenrepos/snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>	
 </project>
