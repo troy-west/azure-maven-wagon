@@ -30,10 +30,12 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: mvn dependency:go-offline
+      - run:
+          command: mvn dependency:go-offline
           working_directory: maven-wagon-azure-blob
 
-      - run: mvn compile
+      - run:
+          command: mvn compile
           working_directory: maven-wagon-azure-blob
 
       - store_artifacts:
