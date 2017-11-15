@@ -152,16 +152,15 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-
-		<extensions>
-			<!-- Eat your own dogfood. Use Azure for distribution -->
-			<extension>
-				<groupId>com.microsoft.windowsazure</groupId>
-				<artifactId>maven-wagon-azure-blob</artifactId>
-				<version>1.0.0</version>
-			</extension>
-		</extensions>
 	</build>
+
+	<distributionManagement>
+	  <repository>
+	    <id>clojars</id>
+	    <name>Clojars repository</name>
+	    <url>https://clojars.org/repo</url>
+	  </repository>
+	</distributionManagement>
 
 	<reporting>
 		<plugins>
